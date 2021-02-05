@@ -5,6 +5,7 @@
 		<title>SunLife</title>
 		<link rel="icon" href="./favicon.png">
 		<link href="./styles/styles.css" rel="stylesheet" type="text/css">
+		<script type="module" src="./js/app.js"></script>
 	</head>
 	<body>
 
@@ -23,19 +24,31 @@
 					<div>Plus</div>
 				</div>
 
-				<div id="border" ></div>
+				<div class="border border-dark" ></div>
 			</div>
 		</nav>
 
 		<div id="summary" >
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec lectus placerat mi pellentesque efficitur eu id purus. 
-			Aliquam quis placerat diam. Quisque quis lacus iaculis, placerat dolor nec, elementum eros. Pellentesque habitant morbi tristique 
-			senectus et netus et malesuada fames ac turpis egestas. Nunc placerat non diam laoreet efficitur. In vulputate vestibulum dui, vel 
-			elementum mauris. Etiam risus est, tristique a turpis et, sollicitudin consectetur nunc. Sed commodo a elit sed lobortis. Vestibulum 
-			blandit dolor et vulputate malesuada. Aliquam eleifend orci elit, et rutrum metus commodo quis. Vestibulum non dolor vitae neque consectetur 
-			facilisis quis et tellus. Mauris vitae velit erat. Nam posuere a est in elementum. Quisque vestibulum imperdiet eleifend. Proin et molestie turpis,
-			eu rhoncus metus. Proin at ante convallis, suscipit metus non, venenatis leo.
+			<div id="text">
+				<h1>SunLife</h1>
+				<p>
+					Le monde est en proie à des bactéries ultra-résistantes. Les antibiotiques ne fonctionnent plus et les infections sont de plus en plus mortelles. 
+					Charlie Horcas, PDG de l'entreprise SunLife &mdash; renommée mondialement &mdash;, a décidé de trouver une solution pour ce fléau après avoir sauvé 
+					le monde de la pollution. Ont alors émergé les nanomachines SunLife.<br />
+					C'était ce dont le monde avait besoin : un sauveur. Les différentes maladies infectieuses ont alors commencé à s'effacer jusqu'au jour où quelqu'un est mort à cause de son remède. SunLife a tué un homme.<br />
+					Il n'y a pas vraiment de consensus sur les raisons de son décès, mais les avis tendent à penser qu'une tierce personne aurait trouvé le moyen de pirater ses 
+					nanomachines.<br />
+					Rapidement, les gouvernements mondiaux ont banni cette technologie et SunLife a dû retravailler dessus. Des années plus tard, pendant la grande pandémie de 2056, 
+					une nouvelle version du remède sort et Charlie est remise sur son piedéstal.<br />
+					Malheureusement, un autre mal va s'abattre sur le monde. Quelque chose de tellement énorme que même SunLife ne pourra rien faire : une guerre 
+					nucléaire mondiale.<br />
+					Le monde est dévasté mais Charlie a survécu. Tous ses efforts ont été réduits à néant, mais sa volonté de sauver le monde est toujours là.
+				</p>
+			</div>
+			<div class="border border-light"></div>
 		</div>
+
+		
 
 	</body>
 </html>

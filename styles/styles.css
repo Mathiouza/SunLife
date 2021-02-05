@@ -1,43 +1,8 @@
+@import './fonts.css';
+
 :root {
     --main-color: #111111;
     --secondary-color: #eeeeee;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-Bold.otf') format('opentype');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-Light.otf') format('opentype');
-    font-weight: lighter;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-Italic.otf') format('opentype');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-BoldItalic.otf') format('opentype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-LightItalic.otf') format('opentype');
-    font-weight: lighter;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url('../res/common/font/Quicksand-Regular.otf') format('opentype');
 }
 
 body {
@@ -85,18 +50,60 @@ nav {
 
 #buttons > div {
     background-color: #333333;
-    font-size: 30px;
+    font-size: 200%;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
     font-weight: lighter;
     user-select: none;
     cursor: pointer;
 }
 
-#border {
-    border-left: 40px solid var(--main-color);
-    border-bottom: 60px solid transparent;
+#buttons > div:hover {
+    background-color: black;
+}
+
+.border {
+    width: 30px;
+}
+
+.border-light {
+    background-image: linear-gradient(to bottom right, var(--secondary-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
+
+.border-dark {
+    background-image: linear-gradient(to bottom right, var(--main-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
+
+#summary {
+    animation: 1s ease-out 0s 1 slide;
+    margin-top: 30px;
+    display: flex;
+    justify-content: left;
+}
+
+#summary > #text {
+    font-weight: bold;
+    font-style: italic;
+    width: 80%;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+#summary > #text > h1 {
+    font-size: xx-large;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
