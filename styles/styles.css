@@ -79,6 +79,15 @@ nav {
     background-repeat: no-repeat;
 }
 
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 #summary {
     animation: 1s ease-out 0s 1 slide;
     margin-top: 30px;
@@ -87,6 +96,7 @@ nav {
 }
 
 #summary > #text {
+    text-align:justify;
     font-weight: bold;
     font-style: italic;
     width: 80%;
@@ -99,11 +109,42 @@ nav {
     font-size: xx-large;
 }
 
-@keyframes slide {
+@keyframes dotAnimation {
     0% {
-        transform: translateX(-100%);
+        color: transparent;
+        background-color: transparent;
+        transform: translateY(-300%);
+    }
+    50% {
+        color: transparent;
+        background-color: transparent;
     }
     100% {
-        transform: translateX(0%);
+        color: var(--main-color);
+        background-color: var(--secondary-color);
+        transform: translateY(0%);
     }
+}
+
+#button-read {
+    animation: 1s ease-out 0.4s 1 dotAnimation forwards;
+    background-color: transparent;
+    color: transparent;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 9999px;
+    width: fit-content;
+    height: fit-content;
+    font-size: x-large;
+    align-self: center;
+    display: inline-block;
+}
+
+#button-read-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#content {
+    width:100%;
 }
