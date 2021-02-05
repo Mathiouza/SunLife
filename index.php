@@ -5,6 +5,8 @@
 		<title>SunLife</title>
 		<link rel="icon" href="./favicon.png">
 		<link href="./styles/styles.css" rel="stylesheet" type="text/css">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
 		<script type="module" src="./js/app.js"></script>
 	</head>
 	<body>
