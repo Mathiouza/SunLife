@@ -3,6 +3,7 @@
 :root {
     --main-color: #111111;
     --secondary-color: #eeeeee;
+    --tertiary-color: #0aaf62;
 }
 
 body {
@@ -11,6 +12,11 @@ body {
     background-color: var(--main-color);
     color: var(--secondary-color);
     font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    position:relative;
 }
 
 nav {
@@ -79,7 +85,12 @@ nav {
     background-repeat: no-repeat;
 }
 
-@keyframes slide {
+.border-tertiary {
+    background-image: linear-gradient(to top left, var(--tertiary-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
+
+@keyframes slide-left {
     0% {
         transform: translateX(-100%);
     }
@@ -88,63 +99,103 @@ nav {
     }
 }
 
+@keyframes slide-right {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 #summary {
-    animation: 1s ease-out 0s 1 slide;
-    margin-top: 30px;
+    animation: 1s ease-out 0s 1 slide-left;
     display: flex;
     justify-content: left;
+    width: 80%;
 }
 
 #summary > #text {
     text-align:justify;
     font-weight: bold;
     font-style: italic;
-    width: 80%;
+    width: 100%;
     padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: var(--secondary-color);
     color: var(--main-color);
 }
 
-#summary > #text > h1 {
-    font-size: xx-large;
-}
-
-@keyframes dotAnimation {
-    0% {
-        color: transparent;
-        background-color: transparent;
-        transform: translateY(-300%);
-    }
-    50% {
-        color: transparent;
-        background-color: transparent;
-    }
-    100% {
-        color: var(--main-color);
-        background-color: var(--secondary-color);
-        transform: translateY(0%);
-    }
+h1 {
+    font-size: 50px;
 }
 
 #button-read {
-    animation: 1s ease-out 0.4s 1 dotAnimation forwards;
-    background-color: transparent;
-    color: transparent;
-    padding: 10px;
+    height: 100%;
+    background-color: var(--tertiary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
     font-weight: bold;
-    border-radius: 9999px;
-    width: fit-content;
-    height: fit-content;
-    font-size: x-large;
-    align-self: center;
-    display: inline-block;
+    transition: 0.3s ease-in-out;
 }
 
 #button-read-container {
+    animation: 0.7s ease-out 0.7s 1 slide-right forwards;
+    transform: translateX(100%);
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    width: 20%;
+}
+
+#button-read-container:hover > #button-read {
+    transition: 0.3s ease-in-out;
+    font-size: 50px;
+}
+
+#summary-container {
     margin-top: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #content {
     width:100%;
+    position:relative;
+}
+
+#canvas {
+    position:absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#more-container {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+#more-buttons {
+    margin: auto;
+    margin-top: 80px;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: xx-large;
+}
+
+.more-button {
+    background-color: var(--tertiary-color);
+    border-radius: 9999px;
+    padding: 20px;
 }
