@@ -3,7 +3,6 @@ export class HTMLPoint {
         this.calculation = calculation;
     }
     static getHTMLPosition(element) {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return { x: element.getBoundingClientRect().left, y: element.getBoundingClientRect().top + scrollTop };
+        return { x: element.getBoundingClientRect().left, y: element.getBoundingClientRect().top + window.pageYOffset };
     }
 }

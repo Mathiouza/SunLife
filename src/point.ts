@@ -1,4 +1,4 @@
-import { Vec2 } from "./vec2";
+import { Vec2, VecOp } from "./vec2";
 
 export class HTMLPoint {
 
@@ -6,9 +6,7 @@ export class HTMLPoint {
 
     static getHTMLPosition(element:HTMLElement):Vec2 {
 
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        return {x:element.getBoundingClientRect().left, y:element.getBoundingClientRect().top+scrollTop};
+        return {x:element.getBoundingClientRect().left, y:element.getBoundingClientRect().top+window.pageYOffset};
 
     }
 

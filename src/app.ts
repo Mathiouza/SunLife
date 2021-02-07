@@ -17,11 +17,11 @@ if(canvas instanceof HTMLCanvasElement) {
 
         new Line(new HTMLPoint((p:Vec2) => {
 
-            return {x:0.5*canvas.clientWidth, y:HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y+120};
+            return {x:0.5*canvas.clientWidth, y:HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y+100};
 
         }), new HTMLPoint((p:Vec2) => {
 
-            return {x:0.5*canvas.clientWidth, y:HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y+120+90};
+            return {x:0.5*canvas.clientWidth, y:HTMLPoint.getHTMLPosition(document.getElementById('persos')).y + document.getElementById('persos').getBoundingClientRect().height/2};
 
         }), 0),
 
@@ -43,7 +43,7 @@ if(canvas instanceof HTMLCanvasElement) {
 
             document.styleSheets[0].addRule('.more-button', 'color: var(--secondary-color)')
 
-        })
+        }),
 
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, []);
 
@@ -61,18 +61,18 @@ if(canvas instanceof HTMLCanvasElement) {
         }), 0),
 
         new Arc(new HTMLPoint( (previousPoint:Vec2) => {
-            return {x:previousPoint.x+120, y:previousPoint.y};
-        }), Math.PI, 3*Math.PI/2, 120, 1),
+            return {x:previousPoint.x+100, y:previousPoint.y};
+        }), Math.PI, 3*Math.PI/2, 100, 1),
 
         new Line(new HTMLPoint((previousPoint:Vec2) => {
             return {x:previousPoint.x, y:previousPoint.y};
         }), new HTMLPoint((previousPoint:Vec2) => {
-            return {x:0.95*canvas.clientWidth-120, y:previousPoint.y};
+            return {x:0.95*canvas.clientWidth-100, y:previousPoint.y};
         }), 2),
 
         new Arc(new HTMLPoint( (p:Vec2) => {
-            return {x:p.x, y:p.y+120};
-        }), Math.PI/2, 0, 120, 3)
+            return {x:p.x, y:p.y+100};
+        }), Math.PI/2, 0, 100, 3)
 
     ], [
 
@@ -86,9 +86,9 @@ if(canvas instanceof HTMLCanvasElement) {
         }),
 
         new LinkedFunction(2, 0.5, () => {
-            document.getElementById('button-read-container').style.transform = 'translateX(0%)';
             pathPersonnage.start(1000);
-        })
+            document.getElementById('button-read-container').style.transform = 'translateX(0%)';
+        }),
 
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), true, [pathPersonnage]);
 }
