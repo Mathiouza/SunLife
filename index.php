@@ -62,9 +62,9 @@
 			</div>
 
 			<div id="more-container">
-				<h1>En savoir plus</h1>
+				<h1 id="more-title">En savoir plus</h1>
 				<div id="more-buttons">
-					<div class="more-button" id="persos">Les personnage</div>
+					<div class="more-button" id="persos">Personnages</div>
 					<div class="more-button" id="artworks">Artworks</div>
 				</div>
 			</div>

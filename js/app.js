@@ -1,11 +1,60 @@
-import { PathRenderer } from "./path-renderer";
+import { LinkedFunction, PathRenderer } from "./path-renderer";
 import * as Constants from "./constants";
+import { Arc, Dot, Line } from "./curve";
+import { HTMLPoint } from "./point";
 let canvas = document.getElementById('canvas');
 let pathMainPage;
+let pathPersonnage;
 if (canvas instanceof HTMLCanvasElement) {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
-    pathMainPage = new PathRenderer(canvas);
+    pathPersonnage = new PathRenderer(canvas, [
+        new Line(new HTMLPoint((p) => {
+            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y + 120 };
+        }), new HTMLPoint((p) => {
+            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y + 120 + 90 };
+        }), 0),
+        new Dot(new HTMLPoint((p) => {
+            return { x: p.x, y: p.y };
+        }), 20, 1)
+    ], [
+        new LinkedFunction(0, 0, () => {
+            document.styleSheets[0].addRule('.more-button', 'background-color: var(--tertiary-color)');
+        }),
+        new LinkedFunction(1, 0, () => {
+            document.styleSheets[0].addRule('.more-button', 'color: var(--secondary-color)');
+        })
+    ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, []);
+    pathMainPage = new PathRenderer(canvas, [
+        new Line(new HTMLPoint((previousPoint) => {
+            return { x: 0.05 * canvas.clientWidth, y: 300 };
+        }), new HTMLPoint((previousPoint) => {
+            return { x: 0.05 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y };
+        }), 0),
+        new Arc(new HTMLPoint((previousPoint) => {
+            return { x: previousPoint.x + 120, y: previousPoint.y };
+        }), Math.PI, 3 * Math.PI / 2, 120, 1),
+        new Line(new HTMLPoint((previousPoint) => {
+            return { x: previousPoint.x, y: previousPoint.y };
+        }), new HTMLPoint((previousPoint) => {
+            return { x: 0.95 * canvas.clientWidth - 120, y: previousPoint.y };
+        }), 2),
+        new Arc(new HTMLPoint((p) => {
+            return { x: p.x, y: p.y + 120 };
+        }), Math.PI / 2, 0, 120, 3)
+    ], [
+        new LinkedFunction(0, 0.2, () => {
+            document.getElementById('summary').style.transform = 'translateX(0%)';
+        }),
+        new LinkedFunction(2, 0, () => {
+            document.getElementById('more-title').style.transform = 'translateY(0%)';
+            document.getElementById('more-title').style.color = 'var(--secondary-color)';
+        }),
+        new LinkedFunction(2, 0.5, () => {
+            document.getElementById('button-read-container').style.transform = 'translateX(0%)';
+            pathPersonnage.start(1000);
+        })
+    ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), true, [pathPersonnage]);
 }
 const fixBorderSize = () => {
     let borders = document.getElementsByClassName('border resize');
@@ -41,34 +90,22 @@ const fixMoreButtonsSize = () => {
         }
     }, 20, buttons);
 };
-let time = Date.now();
-let startTime = Date.now();
-const drawPath = () => {
-    time = Date.now();
-    pathMainPage.draw(Math.pow((time - startTime) / Constants.PATH_ANIMATION_TIME, 1 / 2));
-    if (time < startTime + Constants.PATH_ANIMATION_TIME)
-        setTimeout(drawPath, 5);
-};
 window.onresize = () => {
     fixBorderSize();
     fixMoreButtonsSize();
     if (canvas instanceof HTMLCanvasElement) {
-        let body = document.body;
-        let html = document.documentElement;
-        let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        let height = document.body.getBoundingClientRect().height;
         canvas.width = canvas.clientWidth;
         canvas.height = height;
-        pathMainPage.draw(1);
+        pathMainPage.draw();
     }
 };
 window.onload = () => {
     fixBorderSize();
     fixMoreButtonsSize();
     setTimeout(() => {
-        time = Date.now();
-        startTime = Date.now();
-        drawPath();
-    }, 500);
+        pathMainPage.start(Constants.PATH_ANIMATION_TIME);
+    }, 500, Constants.PATH_ANIMATION_TIME);
 };
 document.getElementById("button-read-container").onclick = () => {
     window.location.href = "./BD.php";
