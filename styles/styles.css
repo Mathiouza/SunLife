@@ -207,7 +207,7 @@ h1 {
     width: 100%;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .card {
@@ -258,4 +258,102 @@ h1 {
     transform: translateY(100%);
     color: transparent;
     transition: 0.7s ease-in-out;
+}
+
+#avancement-container > h2 {
+    margin-bottom: 60px;
+}
+
+#follow-avancement-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+#avancement-container > * {
+    transition:1s ease-in-out;
+}
+
+#follow-title {
+    text-align: right;
+}
+
+#avancement-title {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-1 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-2 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-3 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-4 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-5 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#chapter-6 {
+    transform:translateX(-50%);
+    color:transparent;
+}
+
+#follow-container > div {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#follow-container > div > img {
+    height: 80px;
+    transition: 1s ease-in-out;
+    border: var(--secondary-color) 2px solid;
+    border-radius: 9999px;
+}
+
+#follow-container > div > img:hover {
+    transform: scale(1.2);
+}
+
+#img-deviant-art {
+    transform-origin: center;
+    transform: rotate(60deg) scale(0);
+}
+
+#img-instagram {
+    transform-origin: center;
+    transform: rotate(60deg) scale(0);
+}
+
+#img-youtube {
+    transform-origin: center;
+    transform: rotate(60deg) scale(0);
+}
+
+#img-facebook {
+    transform-origin: center;
+    transform: rotate(60deg) scale(0);
+}
+
+#follow-title {
+    transform: translateX(50%);
+    color: transparent;
+    transition: 1s ease-in-out;
 }

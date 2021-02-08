@@ -88,6 +88,33 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="follow-avancement-container">
+				<div id="avancement-container">
+					<h1 id="avancement-title">Avancement</h1>
+					<h2 id="chapter-1">Chapitre 1</h2>
+					<h2 id="chapter-2">Chapitre 2</h2>
+					<h2 id="chapter-3">Chapitre 3</h2>
+					<h2 id="chapter-4">Chapitre 4</h2>
+					<h2 id="chapter-5">Chapitre 5</h2>
+					<h2 id="chapter-6">Chapitre 6</h2>
+				</div>
+				<div id="follow-container">
+					<h1 id="follow-title">Suivre SunLife</h1>
+					<div id="deviant-art">
+						<img id="img-deviant-art" src="./res/common/da.png" />
+					</div>
+					<div id="youtube">
+						<img id="img-youtube" src="./res/common/yt.png" />
+					</div>
+					<div id="instagram">
+						<img id="img-instagram" src="./res/common/ig.png" />
+					</div>
+					<div id="facebook">
+						<img id="img-facebook" src="./res/common/fb.png" />
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>
