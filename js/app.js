@@ -97,7 +97,7 @@ if (canvas instanceof HTMLCanvasElement) {
             pathPersonnage.start(1000);
             document.getElementById('button-read-container').style.transform = 'translateX(0%)';
         }),
-        new LinkedFunction(4, 0, () => {
+        new LinkedFunction(-1, 0, () => {
             pathMainPage2.start(2000);
         })
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), true, [pathPersonnage, pathMainPage2]);

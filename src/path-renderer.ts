@@ -89,6 +89,15 @@ export class PathRenderer {
 
         }
 
+        if(this.isEnded()) {
+            for(let l of this.linkedFunctions) {
+                if(!l.isChanged && l.i == -1) {
+                    l.toRun();
+                    l.isChanged = true;
+                }
+            }
+        }
+
         if(this.main && (Date.now() - this.startTime < this.duration || !this.areAllPathsEnded() )) {
 
             setTimeout(() => {

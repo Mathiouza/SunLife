@@ -145,7 +145,7 @@ if(canvas instanceof HTMLCanvasElement) {
             document.getElementById('button-read-container').style.transform = 'translateX(0%)';
         }),
 
-        new LinkedFunction(4, 0, () => {
+        new LinkedFunction(-1, 0, () => {
             pathMainPage2.start(2000);
         })
 
