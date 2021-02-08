@@ -11,6 +11,9 @@ export class Curve {
     getEndPoint() {
         return { x: 0, y: 0 };
     }
+    getStartPoint() {
+        return { x: 0, y: 0 };
+    }
     getPreviousPoint() {
         return this.index == 0 ? { x: 0, y: 0 } : this.curves[this.index - 1].getEndPoint();
     }
@@ -38,6 +41,9 @@ export class Line extends Curve {
     getEndPoint() {
         return this.endPoint.calculation(this.getPreviousPoint());
     }
+    getStartPoint() {
+        return this.beginPoint.calculation(this.getPreviousPoint());
+    }
     getLength() {
         return VecOp.distance(this.beginPoint.calculation(this.getPreviousPoint()), this.endPoint.calculation(this.getPreviousPoint()));
     }
@@ -63,6 +69,10 @@ export class Arc extends Curve {
         const center = this.centerPoint.calculation(this.getPreviousPoint());
         return { x: center.x + this.radius * Math.cos(this.endAngle), y: center.y + this.radius * Math.sin(this.endAngle) };
     }
+    getStartPoint() {
+        const center = this.centerPoint.calculation(this.getPreviousPoint());
+        return { x: center.x + this.radius * Math.cos(this.startAngle), y: center.y + this.radius * Math.sin(this.startAngle) };
+    }
     getLength() {
         return Math.abs(this.radius * (this.endAngle - this.startAngle));
     }
@@ -79,6 +89,12 @@ export class Dot extends Curve {
         this.ctx.beginPath();
         this.ctx.arc(this.point.calculation(previousPoint).x, this.point.calculation(previousPoint).y, newRadius, 0, 2 * Math.PI);
         this.ctx.fill();
+    }
+    getStartPoint() {
+        return this.point.calculation(this.getPreviousPoint());
+    }
+    getEndPoint() {
+        return this.point.calculation(this.getPreviousPoint());
     }
     getLength() {
         return this.radius;

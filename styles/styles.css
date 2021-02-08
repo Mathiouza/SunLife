@@ -202,3 +202,60 @@ h1 {
     transition: 0.7s ease-in-out;
 
 }
+
+#stats-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+#pages {
+
+    transform: scaleY(0);
+    transition: 0.7s ease-in-out;
+
+}
+
+#done {
+
+    transform: scaleY(0);
+    transition: 0.7s ease-in-out;
+
+}
+
+#date {
+
+    transform: scaleY(0);
+    transition: 0.7s ease-in-out;
+
+}
+
+.card > h2 {
+    font-size: 70px;
+    margin: 0;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+}
+
+#stats-title {
+    transform: translateY(100%);
+    color: transparent;
+    transition: 0.7s ease-in-out;
+}

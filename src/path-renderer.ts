@@ -11,7 +11,7 @@ export class PathRenderer {
 
     private started:boolean;
 
-    constructor(private canvas:HTMLCanvasElement, private curves:Curve[], private linkedFunctions:LinkedFunction[], private strokeStyle:string | CanvasGradient | CanvasPattern, private main:boolean = true, private paths:PathRenderer[]) {
+    constructor(private canvas:HTMLCanvasElement, private curves:Curve[], private linkedFunctions:LinkedFunction[], private strokeStyle:string | CanvasGradient | CanvasPattern, private main:boolean, private paths:PathRenderer[], private scroll:boolean = false) {
 
         this.ctx = canvas.getContext('2d');
 
@@ -40,6 +40,17 @@ export class PathRenderer {
 
         if(!this.started)
             return;
+
+        if(this.scroll) {
+
+            this.startTime = Date.now();
+
+            if(window.pageYOffset >= this.curves[0].getStartPoint().y-window.innerHeight/2 || window.pageYOffset + window.innerHeight >= document.documentElement.offsetHeight-100) {
+                this.scroll = false;
+            }
+            else return;
+
+        }
 
         if(this.main)
             this.ctx.clearRect(0, 0, this.size.x, this.size.y);
@@ -116,7 +127,7 @@ export class PathRenderer {
 
     private isEnded():boolean {
 
-        return this.started && Date.now() - this.startTime > this.duration || !this.started;
+        return this.started && Date.now() - this.startTime > this.duration;
 
     }
 

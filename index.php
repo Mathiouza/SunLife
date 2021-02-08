@@ -68,6 +68,26 @@
 					<div class="more-button" id="artworks">Artworks</div>
 				</div>
 			</div>
+
+			<div id="stats-container">
+				<h1 id="stats-title">Quelques nombres</h1>
+				<div id="cards">
+					<div class="card" id="pages">
+						<h2>0</h2>
+						<div>pages prévues</div>
+					</div>
+
+					<div class="card" id="date">
+						<h2>0</h2>
+						<div>jours depuis le début</div>
+					</div>
+
+					<div class="card" id="done">
+						<h2>0</h2>
+						<div>pages terminées</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>

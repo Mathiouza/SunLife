@@ -1,11 +1,12 @@
 export class PathRenderer {
-    constructor(canvas, curves, linkedFunctions, strokeStyle, main = true, paths) {
+    constructor(canvas, curves, linkedFunctions, strokeStyle, main, paths, scroll = false) {
         this.canvas = canvas;
         this.curves = curves;
         this.linkedFunctions = linkedFunctions;
         this.strokeStyle = strokeStyle;
         this.main = main;
         this.paths = paths;
+        this.scroll = scroll;
         this.ctx = canvas.getContext('2d');
         this.size = { x: canvas.clientWidth, y: canvas.clientHeight };
         for (let curve of this.curves) {
@@ -23,6 +24,14 @@ export class PathRenderer {
     draw() {
         if (!this.started)
             return;
+        if (this.scroll) {
+            this.startTime = Date.now();
+            if (window.pageYOffset >= this.curves[0].getStartPoint().y - window.innerHeight / 2 || window.pageYOffset + window.innerHeight >= document.documentElement.offsetHeight - 100) {
+                this.scroll = false;
+            }
+            else
+                return;
+        }
         if (this.main)
             this.ctx.clearRect(0, 0, this.size.x, this.size.y);
         this.ctx.lineWidth = 20;
@@ -72,7 +81,7 @@ export class PathRenderer {
         return true;
     }
     isEnded() {
-        return this.started && Date.now() - this.startTime > this.duration || !this.started;
+        return this.started && Date.now() - this.startTime > this.duration;
     }
 }
 export class LinkedFunction {
