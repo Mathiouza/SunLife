@@ -466,31 +466,8 @@ const fixBorderSize = () => {
         }
     }
 };
-const fixMoreButtonsSize = () => {
-    let buttons = document.getElementsByClassName("more-button");
-    let width = 0;
-    for (let button of buttons) {
-        if (button instanceof HTMLElement) {
-            button.style.width = 'initial';
-        }
-    }
-    setTimeout((buttons) => {
-        for (let button of buttons) {
-            if (button instanceof HTMLElement) {
-                if (button.clientWidth > width)
-                    width = button.clientWidth;
-            }
-        }
-        for (let button of buttons) {
-            if (button instanceof HTMLElement) {
-                button.style.width = width + 'px';
-            }
-        }
-    }, 20, buttons);
-};
 window.onresize = () => {
     fixBorderSize();
-    fixMoreButtonsSize();
     if (canvas instanceof HTMLCanvasElement) {
         let height = document.body.getBoundingClientRect().height;
         canvas.width = canvas.clientWidth;
@@ -500,7 +477,6 @@ window.onresize = () => {
 };
 window.onload = () => {
     fixBorderSize();
-    fixMoreButtonsSize();
     setTimeout(() => {
         pathMainPage.start(Constants.PATH_ANIMATION_TIME);
     }, 500, Constants.PATH_ANIMATION_TIME);

@@ -94,6 +94,7 @@ h1 {
     padding: 20px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    width: 200px;
 }
 
 .more-button:hover {
