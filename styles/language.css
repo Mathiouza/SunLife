@@ -1,0 +1,61 @@
+#language-window {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #00000086;
+    z-index: 19;
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#language-dialog {
+
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    border: black solid 1px;
+    border-radius: 20px;
+
+    background-color: white;
+    color: var(--main-color);
+
+    width: 400px;
+    max-width: 80%;
+
+    padding: 20px;
+
+    font-weight: bold;
+
+    z-index: 20;
+    font-size: large;
+
+}
+
+#language-description {
+
+    width:90%;
+    text-align: justify;
+    margin:auto;
+
+}
+
+#languages {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#languages-selection, #button-select-language {
+
+    font-size: large;
+    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+
+}

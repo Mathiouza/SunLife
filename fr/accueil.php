@@ -11,7 +11,9 @@
 		<script type="module" src="../js/main-page.js"></script>
 	</head>
 	<body>
-		<?php include "../assests/nav-bar.php" ?>
+        <?php include "../assets/language.php" ?>
+
+		<?php include "../assets/nav-bar-fr.php" ?>
 
 		<canvas id="canvas"></canvas>
 
@@ -75,7 +77,7 @@
 
 			<div id="follow-avancement-container">
 				<div id="avancement-container">
-					<h1 id="avancement-title">Avancement</h1>
+					<h1 id="avancement-title">Progression</h1>
 					<h2 id="chapter-1">Chapitre 1</h2>
 					<h2 id="chapter-2">Chapitre 2</h2>
 					<h2 id="chapter-3">Chapitre 3</h2>
