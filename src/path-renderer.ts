@@ -11,7 +11,7 @@ export class PathRenderer {
 
     private started:boolean;
 
-    constructor(private canvas:HTMLCanvasElement, private curves:Curve[], private linkedFunctions:LinkedFunction[], private strokeStyle:string | CanvasGradient | CanvasPattern, private main:boolean, private paths:PathRenderer[], private scroll:boolean = false) {
+    constructor(canvas:HTMLCanvasElement, private curves:Curve[], private linkedFunctions:LinkedFunction[], private strokeStyle:string | CanvasGradient | CanvasPattern, private main:boolean, private paths:PathRenderer[], private scroll:boolean = false) {
 
         this.ctx = canvas.getContext('2d');
 

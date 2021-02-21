@@ -28,30 +28,13 @@ let arcFB;
 let pagesNumber = new NumberAnimator(200, 2000, document.getElementById('pages').children[0]);
 let doneNumber = new NumberAnimator(42, 2000, document.getElementById('done').children[0]);
 const oneDay = 24 * 60 * 60 * 1000;
-const firstDate = new Date(2020, 1, 6).getTime();
+const firstDate = new Date(2020, 1, 10).getTime();
 const secondDate = Date.now();
 const diffDays = Math.round(Math.abs((secondDate - firstDate) / oneDay));
 let dateNumber = new NumberAnimator(diffDays, 2000, document.getElementById('date').children[0]);
 if (canvas instanceof HTMLCanvasElement) {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
-    pathPersonnage = new PathRenderer(canvas, [
-        new Line(new HTMLPoint((p) => {
-            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y + 100 };
-        }), new HTMLPoint((p) => {
-            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('persos')).y + document.getElementById('persos').getBoundingClientRect().height / 2 };
-        }), 0),
-        new Dot(new HTMLPoint((p) => {
-            return { x: p.x, y: p.y };
-        }), 20, 1)
-    ], [
-        new LinkedFunction(0, 0, () => {
-            document.styleSheets[0].addRule('.more-button', 'background-color: var(--tertiary-color)');
-        }),
-        new LinkedFunction(1, 0, () => {
-            document.styleSheets[0].addRule('.more-button', 'color: var(--secondary-color)');
-        }),
-    ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, []);
     arcChapter1 = new PathRenderer(canvas, [
         new Arc(new HTMLPoint((p) => {
             return { x: 0.05 * canvas.clientWidth + 60, y: HTMLPoint.getHTMLPosition(document.getElementById('chapter-1')).y };
@@ -192,7 +175,7 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 20, 2)
     ], [
         new LinkedFunction(-1, 0, () => {
-            document.styleSheets[0].addRule('#img-deviant-art', 'transform: rotate(0) scale(1)');
+            document.styleSheets[1].addRule('#img-deviant-art', 'transform: rotate(0) scale(1)');
         })
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, [], false);
     arcIG = new PathRenderer(canvas, [
@@ -209,7 +192,7 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 20, 2)
     ], [
         new LinkedFunction(-1, 0, () => {
-            document.styleSheets[0].addRule('#img-instagram', 'transform: rotate(0) scale(1)');
+            document.styleSheets[1].addRule('#img-instagram', 'transform: rotate(0) scale(1)');
         })
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, [], false);
     arcYT = new PathRenderer(canvas, [
@@ -226,7 +209,7 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 20, 2)
     ], [
         new LinkedFunction(-1, 0, () => {
-            document.styleSheets[0].addRule('#img-youtube', 'transform: rotate(0) scale(1)');
+            document.styleSheets[1].addRule('#img-youtube', 'transform: rotate(0) scale(1)');
         })
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, [], false);
     arcFB = new PathRenderer(canvas, [
@@ -243,9 +226,26 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 20, 2)
     ], [
         new LinkedFunction(-1, 0, () => {
-            document.styleSheets[0].addRule('#img-facebook', 'transform: rotate(0) scale(1)');
+            document.styleSheets[1].addRule('#img-facebook', 'transform: rotate(0) scale(1)');
         })
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, [], false);
+    pathPersonnage = new PathRenderer(canvas, [
+        new Line(new HTMLPoint((p) => {
+            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('more-container')).y + 100 };
+        }), new HTMLPoint((p) => {
+            return { x: 0.5 * canvas.clientWidth, y: HTMLPoint.getHTMLPosition(document.getElementById('persos')).y + document.getElementById('persos').getBoundingClientRect().height / 2 };
+        }), 0),
+        new Dot(new HTMLPoint((p) => {
+            return { x: p.x, y: p.y };
+        }), 20, 1)
+    ], [
+        new LinkedFunction(0, 0, () => {
+            document.styleSheets[1].addRule('.more-button', 'background-color: var(--tertiary-color)');
+        }),
+        new LinkedFunction(1, 0, () => {
+            document.styleSheets[1].addRule('.more-button', 'color: var(--secondary-color)');
+        }),
+    ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, []);
     pathMainPage4 = new PathRenderer(canvas, [
         new Arc(new HTMLPoint((p) => {
             return { x: 0.05 * canvas.clientWidth + 100, y: HTMLPoint.getHTMLPosition(document.getElementById('pages')).y + document.getElementById('pages').getBoundingClientRect().height / 2 + 100 };
@@ -280,7 +280,7 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 6),
     ], [
         new LinkedFunction(1, 0.5, () => {
-            document.styleSheets[0].addRule('#follow-title', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#follow-title', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(4, 0, () => {
             arcDA.start(500);
@@ -328,32 +328,32 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 5)
     ], [
         new LinkedFunction(0, 0, () => {
-            document.styleSheets[0].addRule('#avancement-title', 'transform: translateX(0); color: var(--secondary--color)');
-            pathMainPage4.start(5000);
+            document.styleSheets[1].addRule('#avancement-title', 'transform: translateX(0); color: var(--secondary--color)');
+            pathMainPage4.start(3000);
         }),
         new LinkedFunction(1, 0, () => {
             arcChapter1.start(500);
-            document.styleSheets[0].addRule('#chapter-1', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-1', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(2, 0, () => {
             arcChapter2.start(500);
-            document.styleSheets[0].addRule('#chapter-2', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-2', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(3, 0, () => {
             arcChapter3.start(500);
-            document.styleSheets[0].addRule('#chapter-3', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-3', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(4, 0, () => {
             arcChapter4.start(500);
-            document.styleSheets[0].addRule('#chapter-4', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-4', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(5, 0, () => {
             arcChapter5.start(500);
-            document.styleSheets[0].addRule('#chapter-5', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-5', 'transform: translateX(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(-1, 0, () => {
             arcChapter6.start(500);
-            document.styleSheets[0].addRule('#chapter-6', 'transform: translateX(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#chapter-6', 'transform: translateX(0); color: var(--secondary--color)');
         }),
     ], getComputedStyle(document.documentElement).getPropertyValue('--secondary-color'), false, [], true);
     pathMainPage2 = new PathRenderer(canvas, [
@@ -378,18 +378,18 @@ if (canvas instanceof HTMLCanvasElement) {
         }), 20, 4)
     ], [
         new LinkedFunction(0, 0, () => {
-            document.styleSheets[0].addRule('#stats-title', 'transform: translateY(0); color: var(--secondary--color)');
+            document.styleSheets[1].addRule('#stats-title', 'transform: translateY(0); color: var(--secondary--color)');
         }),
         new LinkedFunction(2, 0.25, () => {
-            document.styleSheets[0].addRule('#done', 'transform: scaleY(1)');
+            document.styleSheets[1].addRule('#done', 'transform: scaleY(1)');
             doneNumber.start();
         }),
         new LinkedFunction(2, 0.5, () => {
-            document.styleSheets[0].addRule('#date', 'transform: scaleY(1)');
+            document.styleSheets[1].addRule('#date', 'transform: scaleY(1)');
             dateNumber.start();
         }),
         new LinkedFunction(2, 0.75, () => {
-            document.styleSheets[0].addRule('#pages', 'transform: scaleY(1)');
+            document.styleSheets[1].addRule('#pages', 'transform: scaleY(1)');
             pagesNumber.start();
         }),
         new LinkedFunction(-1, 0, () => {

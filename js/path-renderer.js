@@ -1,6 +1,5 @@
 export class PathRenderer {
     constructor(canvas, curves, linkedFunctions, strokeStyle, main, paths, scroll = false) {
-        this.canvas = canvas;
         this.curves = curves;
         this.linkedFunctions = linkedFunctions;
         this.strokeStyle = strokeStyle;

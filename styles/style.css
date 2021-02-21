@@ -1,0 +1,21 @@
+@import './fonts.css';
+
+:root {
+    --main-color: #111111;
+    --secondary-color: #eeeeee;
+    --tertiary-color: #0aaf62;
+    --tertiary-color-bis: #04914f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    position:relative;
+}

@@ -1,0 +1,18 @@
+.border {
+    width: 30px;
+}
+
+.border-light {
+    background-image: linear-gradient(to bottom right, var(--secondary-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
+
+.border-dark {
+    background-image: linear-gradient(to bottom right, var(--main-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
+
+.border-tertiary {
+    background-image: linear-gradient(to top left, var(--tertiary-color) 48%, transparent 52%);
+    background-repeat: no-repeat;
+}
