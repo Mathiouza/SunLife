@@ -2,8 +2,6 @@
 
 if(document.cookie.match("lang")) {
 
-    document.getElementById("language-window").style.display = "none";
-
     let selectedLanguage:string = "";
 
     document.cookie.split(";").forEach((value:string, index:number, array:string[]) => {
@@ -25,19 +23,23 @@ if(document.cookie.match("lang")) {
 }
 else {
 
+    document.getElementById("language-window").style.display = "initial";
+
     window.addEventListener('scroll', (e:Event) => {window.scrollTo(0, 0)});
 
     document.getElementById("button-select-language").onclick = (e:MouseEvent) => {
 
-        let selection = document.getElementById("languages-selection") as HTMLSelectElement;
+        let selection = document.getElementById("languages-selection");
 
-        document.cookie = "lang="+selection.value+";path=/;expires=Fri, 31 Dec 9999 23:59:59 GMT";
+        if(selection instanceof HTMLSelectElement) {
+            document.cookie = "lang="+selection.value+";path=/;expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
-        console.log(document.cookie);
+            console.log(document.cookie);
 
-        let elements = location.href.split("/");
+            let elements = location.href.split("/");
 
-        location.href = "../"+selection.value+"/"+elements[elements.length-1]
+            location.href = "../"+selection.value+"/"+elements[elements.length-1]
+        }
 
     }
 
