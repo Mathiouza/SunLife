@@ -10,7 +10,7 @@ export class Reader {
 
     constructor() {
 
-        for(let i = 0 ; i < 29 ; i++) {
+        for(let i = 0 ; i < 82 ; i++) {
 
             this.pages.push(new Page(i));
 
