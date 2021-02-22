@@ -2,8 +2,6 @@
 
 if(document.cookie.match("lang")) {
 
-    document.getElementById("language-window").style.display = "none";
-
     let selectedLanguage:string = "";
 
     document.cookie.split(";").forEach((value:string, index:number, array:string[]) => {
@@ -24,6 +22,8 @@ if(document.cookie.match("lang")) {
 
 }
 else {
+
+    document.getElementById("language-window").style.display = "initial";
 
     window.addEventListener('scroll', (e:Event) => {window.scrollTo(0, 0)});
 

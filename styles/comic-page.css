@@ -1,0 +1,124 @@
+
+
+#bd-container {
+
+    display:flex;
+    justify-content: space-between;
+    height: 100%;
+
+}
+
+#bd-summary-container {
+
+    padding-top: 200px;
+
+    width: 30%;
+    text-align:center;
+    font-size: large;
+    background-color: var(--tertiary-color);
+
+}
+
+#bd-page-selector-container {
+
+    width: 100%;
+
+}
+
+#bd-page-selector > form {
+
+    margin-top: 15px;
+
+}
+
+#page-input {
+
+    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: large;
+
+    width: 100px;
+
+}
+
+#page-input-ok {
+
+    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: large;
+
+}
+
+#bd-summary {
+
+    margin-bottom: 200px;
+
+}
+
+#chapters-summary {
+
+    border: black solid 1px;
+    background-color: var(--secondary-color);
+    width: 200px;
+    margin:auto;
+    color: var(--main-color);
+
+}
+
+.chapter-summary {
+
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.chapter-summary:hover {
+
+    background-color: #cccccc;
+
+}
+
+#reader-container {
+
+    margin-top: 20px;
+    width:70%;
+
+}
+
+#reader {
+
+    text-align: center;
+}
+
+#reader-page {
+
+    width:550px;
+    cursor: pointer;
+
+}
+
+#reader-control {
+
+    margin:auto;
+    width:550px;
+    display:flex;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+
+}
+
+.control {
+
+    text-align: center;
+    width: 33%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.control:hover {
+
+    background-color: #cccccc;
+
+}
