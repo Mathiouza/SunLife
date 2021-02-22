@@ -1,5 +1,5 @@
-import { FullscreenReader } from "./fullscreen-reader";
-import { Reader } from "./reader";
+import { FullscreenReader } from "./fullscreen-reader.js";
+import { Reader } from "./reader.js";
 
 
 let reader = new Reader();
