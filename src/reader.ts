@@ -20,6 +20,7 @@ export class Reader {
         this.pages[1].load();
 
         this.readerPage.src = this.pages[0].imgPath;
+        this.checkIfLoaded();
 
     }
 
@@ -31,6 +32,7 @@ export class Reader {
         this.readerPage.src = this.pages[this.index].imgPath;
 
         this.loadNeighbors();
+        this.checkIfLoaded();
 
     }
 
@@ -42,6 +44,7 @@ export class Reader {
         this.readerPage.src = this.pages[this.index].imgPath;
 
         this.loadNeighbors();
+        this.checkIfLoaded();
 
     }
 
@@ -53,6 +56,25 @@ export class Reader {
         this.readerPage.src = this.pages[this.index].imgPath;
 
         this.loadNeighbors();
+        this.checkIfLoaded();
+
+    }
+
+    private checkIfLoaded():void {
+
+        if(this.pages[this.index].img == null) return;
+
+        if(!this.pages[this.index].img.complete) {
+
+            this.readerPage.src = "../BD/load.png";
+
+            this.pages[this.index].img.onload = () => {
+
+                this.readerPage.src = this.pages[this.index].imgPath;
+
+            }
+
+        }
 
     }
 
