@@ -1,5 +1,5 @@
-import { FullscreenReader } from "./fullscreen-reader";
-import { Reader } from "./reader";
+import { FullscreenReader } from "./fullscreen-reader.js";
+import { Reader } from "./reader.js";
 
 
 let reader = new Reader();
@@ -83,11 +83,26 @@ document.getElementById("fullscreen-reader").onfullscreenchange = (e:Event) => {
         document.getElementById("simple-reader").style.display = "initial";
         document.getElementById("fullscreen-reader").style.display = "none";
 
+        reader.setPage(fullscreenReader.index);
+        input.value = (reader.index+1)+"";
+
     }
 
 }
 
 document.getElementById("fullscreen-reader").onscroll = (e:Event) => {
+
+    if(fullscreenReader.index === 0 && document.getElementById("reader-page-fullscreen3").getBoundingClientRect().top > 0) {
+
+        document.getElementById("fullscreen-reader").scrollTo(0, document.getElementById("reader-page-fullscreen3").getBoundingClientRect().top+document.getElementById("fullscreen-reader").scrollTop);
+
+    }
+
+    if(fullscreenReader.index === fullscreenReader.pages.length-1 && document.getElementById("reader-page-fullscreen4").getBoundingClientRect().top < window.innerHeight) {
+
+        document.getElementById("fullscreen-reader").scrollTo(0, document.getElementById("reader-page-fullscreen4").getBoundingClientRect().top-window.innerHeight+document.getElementById("fullscreen-reader").scrollTop);
+
+    }
 
     if(document.getElementById("reader-page-fullscreen4").getBoundingClientRect().top < 0) {
 

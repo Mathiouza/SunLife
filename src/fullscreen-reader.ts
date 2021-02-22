@@ -1,4 +1,4 @@
-import { Page } from "./page";
+import { Page } from "./page.js";
 
 
 export class FullscreenReader {
@@ -32,6 +32,7 @@ export class FullscreenReader {
         this.fullscreenPages[2].src = this.pages[0].imgPath;
 
         this.display();
+        this.checkIfLoaded();
 
     }
 
@@ -41,6 +42,7 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
+        this.checkIfLoaded();
 
     }
 
@@ -50,6 +52,7 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
+        this.checkIfLoaded();
 
     }
 
@@ -59,6 +62,32 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
+        this.checkIfLoaded();
+
+    }
+
+    private checkIfLoaded():void {
+
+        for(let i = 0 ; i < 5 ; i++) {
+
+            let index = this.index+i-2;
+            index = this.rectifyIndex(index);
+
+            if(this.pages[index].img == null) continue;
+
+            if(!this.pages[index].img.complete) {
+
+                this.fullscreenPages[i].src = "../BD/load.png";
+
+                this.pages[index].img.onload = () => {
+
+                    this.fullscreenPages[i].src = this.pages[index].imgPath;
+
+                }
+
+            }
+
+        }
 
     }
 

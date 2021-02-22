@@ -1,5 +1,5 @@
-import { HTMLPoint } from "./point";
-import { Vec2, VecOp } from "./vec2";
+import { HTMLPoint } from "./point.js";
+import { Vec2, VecOp } from "./vec2.js";
 
 export class Curve {
 

@@ -1,6 +1,6 @@
-import { Arc, Curve, Line } from './curve';
-import { HTMLPoint } from './point';
-import {Vec2} from './vec2';
+import { Arc, Curve, Line } from './curve.js';
+import { HTMLPoint } from './point.js';
+import {Vec2} from './vec2.js';
 
 export class PathRenderer {
 

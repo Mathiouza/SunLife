@@ -3,6 +3,7 @@
 export class Page {
 
     public imgPath:string;
+    public img:HTMLImageElement;
 
     constructor(public page:number) {
 

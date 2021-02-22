@@ -1,4 +1,4 @@
-import { Vec2, VecOp } from "./vec2";
+import { Vec2, VecOp } from "./vec2.js";
 
 export class HTMLPoint {
 

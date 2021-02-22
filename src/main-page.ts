@@ -1,9 +1,9 @@
-import { LinkedFunction, PathRenderer } from "./path-renderer";
-import * as Constants from "./constants";
-import { Arc, Dot, Line } from "./curve";
-import { HTMLPoint } from "./point";
-import { Vec2 } from "./vec2";
-import { NumberAnimator } from "./number";
+import { LinkedFunction, PathRenderer } from "./path-renderer.js";
+import * as Constants from "./constants.js";
+import { Arc, Dot, Line } from "./curve.js";
+import { HTMLPoint } from "./point.js";
+import { Vec2 } from "./vec2.js";
+import { NumberAnimator } from "./number.js";
 
 let canvas = document.getElementById('canvas');
 
