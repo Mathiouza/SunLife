@@ -14,3 +14,7 @@ You can also help me with translating the comic itself. Please start with postin
 ## Code
 
 You can open issues related to the website, like bugs or some other odd things that hapenning.
+
+## Contact me
+
+You can easily contact myself in the discussion tab, or on my different social media: [DeviantArt](https://www.deviantart.com/mathiouza) or [Instagram](https://www.instagram.com/mathiouza/). You can also send me an email: contact@sunlifecomic.com
