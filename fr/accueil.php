@@ -101,6 +101,11 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="github-container">
+				<h1 id="github-title">Vous voulez aider ?</h1>
+				<div id="github-button">Répertoire Github</div>
+			</div>
 		</div>
 
 	</body>

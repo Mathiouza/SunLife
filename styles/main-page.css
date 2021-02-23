@@ -264,3 +264,41 @@ h1 {
     color: transparent;
     transition: 1s ease-in-out;
 }
+
+#github-container {
+
+    margin-top: 100px;
+    width:100%;
+    margin-bottom: 300px;
+
+}
+
+#github-title {
+
+    text-align: center;
+    color: transparent;
+    transition: 0.3s ease-in-out;
+
+}
+
+#github-button {
+
+    color: transparent;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    font-size: xx-large;
+    width: 350px;
+    border-radius: 9999px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+
+}
+
+#github-button:hover {
+
+    background-color: var(--tertiary-color-bis);
+    transition: 0.3s ease-in-out;
+
+}

@@ -98,6 +98,11 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="github-container">
+				<h1 id="github-title">Wanna help?</h1>
+				<div id="github-button">Github repository</div>
+			</div>
 		</div>
 
 	</body>

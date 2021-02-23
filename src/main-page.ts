@@ -417,6 +417,26 @@ if(canvas instanceof HTMLCanvasElement) {
             return {x:p.x, y:HTMLPoint.getHTMLPosition(document.getElementById('facebook')).y-10}
         }), 6),
 
+        new Line(new HTMLPoint((p:Vec2) => {
+            return {x:p.x, y:p.y};
+        }), new HTMLPoint((p:Vec2) => {
+            return {x:p.x, y:HTMLPoint.getHTMLPosition(document.getElementById('github-title')).y-150}
+        }), 7),
+
+        new Arc(new HTMLPoint((p:Vec2) => {
+            return {x:p.x-100, y:p.y};
+        }), 0, -Math.PI/2, 100, 8),
+
+        new Line(new HTMLPoint((p:Vec2) => {
+            return {x:p.x, y:p.y};
+        }), new HTMLPoint((p:Vec2) => {
+            return {x:canvas.clientWidth/2, y:p.y};
+        }), 9),
+
+        new Dot(new HTMLPoint((p:Vec2) => {
+            return {x:p.x, y:p.y};
+        }), 20, 10)
+
     ], [
 
         new LinkedFunction(1, 0.5, () => {
@@ -443,9 +463,17 @@ if(canvas instanceof HTMLCanvasElement) {
 
         }),
 
-        new LinkedFunction(-1, 0, () => {
+        new LinkedFunction(7, 0, () => {
 
             arcFB.start(500);
+
+        }),
+
+        new LinkedFunction(-1, 0, () => {
+
+            document.getElementById("github-title").style.color = "var(--tertiary-color)";
+            document.getElementById("github-button").style.color = "var(--secondary-color)";
+            document.styleSheets[1].addRule('#github-button', 'background-color: var(--tertiary-color);');
 
         })
 
@@ -493,7 +521,7 @@ if(canvas instanceof HTMLCanvasElement) {
 
         new LinkedFunction(0, 0, () => {
             document.styleSheets[1].addRule('#avancement-title', 'transform: translateX(0); color: var(--secondary--color)');
-            pathMainPage4.start(3000);
+            pathMainPage4.start(5000);
         }),
 
         new LinkedFunction(1, 0, () => {
@@ -693,4 +721,10 @@ window.onload = () => {
 
 document.getElementById("button-read-container").onclick = () => {
     window.location.href = "./BD.php";
+}
+
+document.getElementById("github-button").onclick = () => {
+
+    window.open('https://github.com/Mathiouza/SunLife', '_blank');
+
 }
