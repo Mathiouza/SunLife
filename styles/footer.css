@@ -1,0 +1,21 @@
+footer {
+
+    width:100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: var(--tertiary-color);
+    text-align: center;
+
+}
+
+#change-lang {
+
+    cursor: pointer;
+
+}
+
+#change-lang:hover {
+
+    text-decoration: underline;
+
+}

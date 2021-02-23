@@ -105,5 +105,7 @@
 			</div>
 		</div>
 
+		<?php include "../assets/footer-en.php" ?>
+
 	</body>
 </html>

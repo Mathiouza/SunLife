@@ -71,5 +71,7 @@
 			<img class="reader-page-fullscreen" id="reader-page-fullscreen5" src="../BD/load.png" />
 		</div>
 
+		<?php include "../assets/footer-en.php" ?>
+
     </body>
 </html>
