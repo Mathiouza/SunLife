@@ -722,3 +722,9 @@ window.onload = () => {
 document.getElementById("button-read-container").onclick = () => {
     window.location.href = "./BD.php";
 }
+
+document.getElementById("github-button").onclick = () => {
+
+    window.open('https://github.com/Mathiouza/SunLife', '_blank');
+
+}
