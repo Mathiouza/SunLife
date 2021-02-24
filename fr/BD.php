@@ -2,6 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166878957-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-166878957-1');
+		</script>
+
+
 		<title>SunLife</title>
 		<link rel="icon" href="../favicon.png">
 		<link href="../styles/style.css" rel="stylesheet" type="text/css">
