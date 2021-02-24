@@ -4,7 +4,7 @@ This is the repository for [SunLife's website](https://sunlifecomic.com). I want
 
 ## Build
 
-To build the typescript projet, simply use the `tsc` command in the root folder that comes with typescript module in npm.
+To build the typescript projet, simply use the `tsc` command in the root folder that comes with typescript module in npm. Note that you need placeholders for comic pages and load placeholder. Create a directory BD/fr/ and BD/en/ and place 000.png to nnn.png in them. Add load.png in BD/ directory.
 
 ## Translation
 
