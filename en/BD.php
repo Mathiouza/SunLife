@@ -51,7 +51,7 @@
 				<div id="reader-container">
 
 					<div id="reader">
-						<img id="reader-page" src="../BD/load.png" />
+						<img id="reader-page" src="../BD/fr/000.png" />
 					</div>
 
 					<div id="reader-control">
