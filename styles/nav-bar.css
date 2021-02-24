@@ -31,7 +31,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     background-color: var(--main-color);
-    min-width: 850px;
+    min-width: 900px;
 }
 
 #buttons > div {

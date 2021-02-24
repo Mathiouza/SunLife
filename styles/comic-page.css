@@ -62,6 +62,22 @@
     
     }
 
+    #page-input {
+
+        font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        font-size: large;
+    
+        width: 100px;
+    
+    }
+    
+    #page-input-ok {
+    
+        font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        font-size: large;
+    
+    }
+
 }
 
 @media (max-width:1200px) {
@@ -111,6 +127,28 @@
     
     }
 
+    #simple-reader {
+
+        margin-bottom: 20px;
+    
+    }
+
+    #page-input {
+
+        font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        font-size: xx-large;
+    
+        width: 100px;
+    
+    }
+    
+    #page-input-ok {
+    
+        font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        font-size: xx-large;
+    
+    }
+
 }
 
 #bd-page-selector > form {
@@ -119,21 +157,7 @@
 
 }
 
-#page-input {
 
-    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    font-size: large;
-
-    width: 100px;
-
-}
-
-#page-input-ok {
-
-    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    font-size: large;
-
-}
 
 #chapters-summary {
 

@@ -18,7 +18,7 @@
 		<div id="simple-reader" >
 			<?php include "../assets/language.php" ?>
 
-			<?php include "../assets/nav-bar-fr.php" ?>
+			<?php include "../assets/nav-bar-en.php" ?>
 
 			<div id="bd-container">
 
@@ -51,7 +51,7 @@
 				<div id="reader-container">
 
 					<div id="reader">
-						<img id="reader-page" src="../BD/load.png" />
+						<img id="reader-page" src="../BD/fr/000.png" />
 					</div>
 
 					<div id="reader-control">

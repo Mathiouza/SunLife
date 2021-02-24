@@ -19,3 +19,13 @@ footer {
     text-decoration: underline;
 
 }
+
+@media (max-width:1200px) {
+
+    footer {
+
+        font-size: 40px;
+    
+    }
+
+}

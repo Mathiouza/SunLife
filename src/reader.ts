@@ -16,12 +16,6 @@ export class Reader {
 
         }
 
-        if(!this.pages[this.index].load(() => {
-            this.readerPage.src = this.pages[this.index].imgPath;
-        })) {
-            this.readerPage.src = '../BD/load.png';
-        }
-
         this.loadNeighbors();
 
     }
