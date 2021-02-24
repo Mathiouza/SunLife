@@ -8,6 +8,9 @@
         <link href="../styles/comic-page.css" rel="stylesheet" type="text/css">
 		<meta http-equiv="Cache-control" content="no-cache">
 		<meta http-equiv="Expires" content="-1">
+
+		<?php include "../assets/meta.php" ?>
+
 		<script type="module" src="../js/comic-page.js"></script>
 	</head>
     <body>
