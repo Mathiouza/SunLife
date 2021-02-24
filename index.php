@@ -1,5 +1,9 @@
 <?php
 	include "./assets/meta.php";
-
-	header('Location: ./fr/accueil.php');
 ?>
+
+<script>
+
+	location.href = "./fr/accueil.php";
+
+</script>
