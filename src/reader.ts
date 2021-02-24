@@ -16,11 +16,13 @@ export class Reader {
 
         }
 
-        this.pages[0].load();
-        this.pages[1].load();
+        if(!this.pages[this.index].load(() => {
+            this.readerPage.src = this.pages[this.index].imgPath;
+        })) {
+            this.readerPage.src = '../BD/load.png';
+        }
 
-        this.readerPage.src = this.pages[0].imgPath;
-        this.checkIfLoaded();
+        this.loadNeighbors();
 
     }
 
@@ -29,10 +31,13 @@ export class Reader {
         this.index++;
         this.index = this.rectifyIndex(this.index);
 
-        this.readerPage.src = this.pages[this.index].imgPath;
+        if(!this.pages[this.index].load(() => {
+            this.readerPage.src = this.pages[this.index].imgPath;
+        })) {
+            this.readerPage.src = '../BD/load.png';
+        }
 
         this.loadNeighbors();
-        this.checkIfLoaded();
 
     }
 
@@ -41,10 +46,13 @@ export class Reader {
         this.index--;
         this.index = this.rectifyIndex(this.index);
 
-        this.readerPage.src = this.pages[this.index].imgPath;
+        if(!this.pages[this.index].load(() => {
+            this.readerPage.src = this.pages[this.index].imgPath;
+        })) {
+            this.readerPage.src = '../BD/load.png';
+        }
 
         this.loadNeighbors();
-        this.checkIfLoaded();
 
     }
 
@@ -53,28 +61,13 @@ export class Reader {
         this.index = index;
         this.index = this.rectifyIndex(this.index);
 
-        this.readerPage.src = this.pages[this.index].imgPath;
+        if(!this.pages[this.index].load(() => {
+            this.readerPage.src = this.pages[this.index].imgPath;
+        })) {
+            this.readerPage.src = '../BD/load.png';
+        }
 
         this.loadNeighbors();
-        this.checkIfLoaded();
-
-    }
-
-    private checkIfLoaded():void {
-
-        if(this.pages[this.index].img == null) return;
-
-        if(!this.pages[this.index].img.complete) {
-
-            this.readerPage.src = "../BD/load.png";
-
-            this.pages[this.index].img.onload = () => {
-
-                this.readerPage.src = this.pages[this.index].imgPath;
-
-            }
-
-        }
 
     }
 
@@ -89,6 +82,16 @@ export class Reader {
         index = this.rectifyIndex(index);
 
         this.pages[index].load();
+
+        for(let i = 0 ; i < this.pages.length ; i++) {
+
+            if(i < this.index-1 || i > this.index+1) {
+
+                this.pages[i].stopLoad();
+
+            }
+
+        }
 
     }
 

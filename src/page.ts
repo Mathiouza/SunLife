@@ -21,14 +21,27 @@ export class Page {
 
     }
 
-    load():void {
+    load(onload:() => void = () => {}):boolean {
 
-        let img = document.createElement('img');
+        if(this.img == null) {
+            this.img = <HTMLImageElement> document.createElement('img');
+        }
 
-        if(img instanceof HTMLImageElement) {
+        this.img.src = this.imgPath;
+        this.img.onload = onload;
 
-            img.src = this.imgPath;
+        if(this.img.complete) onload();
 
+        return this.img.complete;
+
+    }
+
+    stopLoad():void {
+
+        if(this.img != null && !this.img.complete) {
+            this.img.src = "";
+            this.img.onload = null;
+            this.img.onerror = null;
         }
 
     }

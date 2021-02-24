@@ -24,16 +24,6 @@ export class FullscreenReader {
 
         }
 
-        this.pages[0].load();
-        this.pages[1].load();
-        this.pages[2].load();
-        this.pages[3].load();
-
-        this.fullscreenPages[2].src = this.pages[0].imgPath;
-
-        this.display();
-        this.checkIfLoaded();
-
     }
 
     next():void {
@@ -42,7 +32,6 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
-        this.checkIfLoaded();
 
     }
 
@@ -52,7 +41,6 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
-        this.checkIfLoaded();
 
     }
 
@@ -62,72 +50,60 @@ export class FullscreenReader {
         this.index = this.rectifyIndex(this.index);
 
         this.display();
-        this.checkIfLoaded();
-
-    }
-
-    private checkIfLoaded():void {
-
-        for(let i = 0 ; i < 5 ; i++) {
-
-            let index = this.index+i-2;
-            index = this.rectifyIndex(index);
-
-            if(this.pages[index].img == null) continue;
-
-            if(!this.pages[index].img.complete) {
-
-                this.fullscreenPages[i].src = "../BD/load.png";
-
-                this.pages[index].img.onload = () => {
-
-                    this.fullscreenPages[i].src = this.pages[index].imgPath;
-
-                }
-
-            }
-
-        }
 
     }
 
     private display():void {
 
-        let index = this.index;
-        index = this.rectifyIndex(index);
-        this.fullscreenPages[2].src = this.pages[index].imgPath;
+        let indexes = [
 
-        index = this.index+1;
-        index = this.rectifyIndex(index);
-        this.fullscreenPages[3].src = this.pages[index].imgPath;
+            this.rectifyIndex(this.index),
+            this.rectifyIndex(this.index+1),
+            this.rectifyIndex(this.index-1),
+            this.rectifyIndex(this.index+2),
+            this.rectifyIndex(this.index-2),
 
-        index = this.index-1;
-        index = this.rectifyIndex(index);
-        this.fullscreenPages[1].src = this.pages[index].imgPath;
+        ]
 
-        index = this.index+2;
-        index = this.rectifyIndex(index);
-        this.fullscreenPages[4].src = this.pages[index].imgPath;
+        if(!this.pages[indexes[0]].load(() => {
+            this.fullscreenPages[2].src = this.pages[indexes[0]].imgPath;
+        })) {
+            this.fullscreenPages[2].src = '../BD/load.png';
+        }
 
-        index = this.index-2;
-        index = this.rectifyIndex(index);
-        this.fullscreenPages[0].src = this.pages[index].imgPath;
+        if(!this.pages[indexes[1]].load(() => {
+            this.fullscreenPages[3].src = this.pages[indexes[1]].imgPath;
+        })) {
+            this.fullscreenPages[3].src = '../BD/load.png';
+        }
 
-        this.loadNeighbors();
+        if(!this.pages[indexes[2]].load(() => {
+            this.fullscreenPages[1].src = this.pages[indexes[2]].imgPath;
+        })) {
+            this.fullscreenPages[1].src = '../BD/load.png';
+        }
 
-    }
+        if(!this.pages[indexes[3]].load(() => {
+            this.fullscreenPages[4].src = this.pages[indexes[3]].imgPath;
+        })) {
+            this.fullscreenPages[4].src = '../BD/load.png';
+        }
 
-    private loadNeighbors():void {
+        if(!this.pages[indexes[4]].load(() => {
+            this.fullscreenPages[0].src = this.pages[indexes[4]].imgPath;
+        })) {
+            this.fullscreenPages[0].src = '../BD/load.png';
+        }
 
-        let index = this.index+3;
-        index = this.rectifyIndex(index);
+        for(let i = 0 ; i < this.pages.length ; i++) {
 
-        this.pages[index].load();
+            if(i < this.index-2 || i > this.index+2) {
 
-        index = this.index-3;
-        index = this.rectifyIndex(index);
+                this.pages[i].stopLoad();
 
-        this.pages[index].load();
+            }
+
+        }
 
     }
 
