@@ -1,3 +1,5 @@
 /.vscode
 /.vs
+/BD
 /js
+*.html

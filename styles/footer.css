@@ -1,0 +1,31 @@
+footer {
+
+    width:100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: var(--tertiary-color);
+    text-align: center;
+
+}
+
+#change-lang {
+
+    cursor: pointer;
+
+}
+
+#change-lang:hover {
+
+    text-decoration: underline;
+
+}
+
+@media (max-width:1200px) {
+
+    footer {
+
+        font-size: 40px;
+    
+    }
+
+}

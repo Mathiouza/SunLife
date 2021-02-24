@@ -1,0 +1,13 @@
+export const PATH_ANIMATION_TIME = 2000;
+export const PAGES_CHAPTER_1 = 27;
+export const PAGES_DONE_CHAPTER_1 = 27;
+export const PAGES_CHAPTER_2 = 52;
+export const PAGES_DONE_CHAPTER_2 = 52;
+export const PAGES_CHAPTER_3 = 50;
+export const PAGES_DONE_CHAPTER_3 = 0;
+export const PAGES_CHAPTER_4 = 50;
+export const PAGES_DONE_CHAPTER_4 = 0;
+export const PAGES_CHAPTER_5 = 50;
+export const PAGES_DONE_CHAPTER_5 = 0;
+export const PAGES_CHAPTER_6 = 50;
+export const PAGES_DONE_CHAPTER_6 = 0;
