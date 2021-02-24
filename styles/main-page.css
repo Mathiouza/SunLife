@@ -1,3 +1,4 @@
+
 #summary {
     transform: translateX(-100%);
     transition: 1s ease-out;
@@ -61,6 +62,7 @@ h1 {
 #content {
     width:100%;
     position:relative;
+    overflow-x: hidden;
 }
 
 #canvas {
