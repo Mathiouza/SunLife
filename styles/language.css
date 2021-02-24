@@ -61,3 +61,31 @@
     font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
 
 }
+
+@media (max-width:1200px) {
+
+    #language-dialog {
+
+        width: 90%;
+        max-width: 90%;
+    
+        font-size: xx-large;
+    
+    }
+    
+    #language-description {
+    
+        width:90%;
+        text-align: justify;
+        margin:auto;
+    
+    }
+    
+    #languages-selection, #button-select-language {
+    
+        font-size: xx-large;
+        font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    
+    }
+
+}

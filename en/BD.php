@@ -18,7 +18,7 @@
 		<div id="simple-reader" >
 			<?php include "../assets/language.php" ?>
 
-			<?php include "../assets/nav-bar-fr.php" ?>
+			<?php include "../assets/nav-bar-en.php" ?>
 
 			<div id="bd-container">
 
