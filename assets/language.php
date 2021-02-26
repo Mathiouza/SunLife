@@ -2,9 +2,9 @@
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 ?>
 
-<script type="module" src="../js/language.js"></script>
+<script type="module" src="../js/language.js?v=1"></script>
 
-<link href="../styles/language.css" rel="stylesheet" type="text/css">
+<link href="../styles/language.css?v=1" rel="stylesheet" type="text/css">
 
 <div id="language-window">
 
