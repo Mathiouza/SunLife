@@ -1,7 +1,7 @@
-<link href="../styles/nav-bar.css" rel="stylesheet" type="text/css">
-<link href="../styles/borders.css" rel="stylesheet" type="text/css">
+<link href="../styles/nav-bar.css?v=1" rel="stylesheet" type="text/css">
+<link href="../styles/borders.css?v=1" rel="stylesheet" type="text/css">
 
-<script type="module" src="../js/nav-bar.js"></script>
+<script type="module" src="../js/nav-bar.js?v=1"></script>
 
 <nav>
     <div id="logo" >

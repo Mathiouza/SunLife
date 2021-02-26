@@ -16,14 +16,10 @@
 
 		<title>SunLife</title>
 		<link rel="icon" href="../favicon.png">
-		<link href="../styles/style.css" rel="stylesheet" type="text/css">
-        <link href="../styles/main-page.css" rel="stylesheet" type="text/css">
-		<meta http-equiv="Cache-control" content="no-cache">
-		<meta http-equiv="Expires" content="-1">
+		<link href="../styles/style.css?v=1" rel="stylesheet" type="text/css">
+        <link href="../styles/main-page.css?v=1" rel="stylesheet" type="text/css">
 
 		<?php include "../assets/meta.php" ?>
-
-		<script type="module" src="../js/main-page.js"></script>
 	</head>
 	<body>
         <?php include "../assets/language.php" ?>
